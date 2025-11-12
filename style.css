@@ -1,7 +1,7 @@
  /*NAVBAR STYLING === */
     nav {
-      background-color:black; /* dark background */
-      color: white;
+      background-color:silver; /* dark background */
+      color: greenyellow;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -51,12 +51,25 @@
       }
     }
 
-* {
-    background-color: black;
+body {
+    
+    #home {
+       
+        background:("hacking_gif.gif") no-repeat center center/cover;
+        height: 100vh;           /* full screen height */
+        display: flex;           /* center your content */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        color: white;          /* makes text readable */
+        text-align: center;
+        background-color: grey;
+        
+    }
 }
 
 body {
-    color: white;
+    color: greenyellow;
     
 }
 section h1 {
