@@ -1,18 +1,82 @@
-* {
-    header {
-        color:white
+ /*NAVBAR STYLING === */
+    nav {
+      background-color:black; /* dark background */
+      color: white;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 200px;
+      font-family: Arial, sans-serif;
     }
+
+    nav .logo {
+      font-size: 1.4em;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+      margin: 0;
+      padding: 25;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 1s;
+    }
+
+    nav ul li a:hover {
+      color:green; /* highlight color */
+    }
+
+    /* === RESPONSIVE MENU === */
+    @media (max-width: 700px) {
+      nav {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul {
+        flex-direction: column;
+        width: 100%;
+      }
+
+      nav ul li {
+        padding: 10px 0;
+      }
+    }
+
+* {
+    background-color: black;
+}
+
+body {
+    color: white;
     
-    ul.topnav {
-  display: flex;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  background-color: #333333;
 }
-    background-color:black;
-   body {
-    color:white
-   }
+section h1 {
+  background-color:#111;
+  font: white;
+  padding: 60px 40px;
+  margin: 20px 0;
+}
+
+.section h2 {
+  font-size: 0;
+}
+
+footer a{
+  color: white;
+  
+}
+footer a:hover{
+  color: green;
+  transition: color 1s;
+  
+}
    
-}
