@@ -1,3 +1,5 @@
+
+ 
  /*NAVBAR STYLING === */
     nav {
       background-color:silver; /* dark background */
@@ -7,6 +9,11 @@
       align-items: center;
       padding: 15px 200px;
       font-family: Arial, sans-serif;
+       position: fixed;
+  top: 0;
+  width: 80%;
+  z-index: 1000;  
+  
     }
 
     nav .logo {
@@ -21,6 +28,7 @@
       gap: 25px;
       margin: 0;
       padding: 25;
+
     }
 
     nav ul li a {
@@ -53,25 +61,60 @@
 
 body {
     
-    #home {
-       
-        background:("hacking_gif.gif") no-repeat center center/cover;
-        height: 100vh;           /* full screen height */
-        display: flex;           /* center your content */
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        color: white;          /* makes text readable */
-        text-align: center;
-        background-color: grey;
-        
-    }
+   #home {
+  background: url("hacking_gif.gif") no-repeat center center/cover;
+  height: 100vh;              /* full viewport height */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  color: white;
+  text-align: center;
+  
+}
+  #about {
+height: 200vh;
+display: flex;
+max-width: 1200px;
+width: 100%;
+padding-left: 40px;
+
+
+
+}
+#about img {
+  width: 300px;
+  height: 410px;
+  padding: 15px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+
+
+/* optional: dark overlay to make text readable */
+#home .overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#projects {
+      height: 50vh; 
+}
 }
 
 body {
+
     color: greenyellow;
+    background-color: grey;
     
-}
+    }
+
 section h1 {
   background-color:#111;
   font: white;
