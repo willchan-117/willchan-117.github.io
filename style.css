@@ -1,8 +1,16 @@
 
  
+ html {
+  scroll-behavior: smooth;
+  /*makes it so when you click a nav button it will
+  scroll to that section instead of teleporting to it*/
+}
+.section, .education, .projects {
+  scroll-margin-top: 20px; /* adjust for your navbar height */
+}
  /*NAVBAR STYLING === */
     nav {
-      background-color:silver; /* dark background */
+      background-color:rgba(192, 192, 192, 0.563); /* dark background */
       color: rgb(255, 179, 94);
       display: flex;
       justify-content: space-between;
@@ -65,45 +73,73 @@ body {
   justify-content: center;
   align-items: center;
 }
-
-  #about {
-height: 30vh;
-/* changes gap between about and education*/
-display: flex;
-max-width: 1200px;
-width: 100%;
-padding-left: 40px;
-margin-bottom: 25vh;}
-
-
-#about img {
-  width: 300px;
-  height: 410px;
-  padding: 15px;
-  flex-wrap: wrap;
-  justify-content: center;
+.welcome {
+  margin-left: 400px;
+  
+}
+#about {
+  background-color: #111;
+  padding: 60px 40px;
+  margin-bottom: 25vh;
+  text-align: center;
 }
 
-/* Education */
-.education-item{
-  background-color: #f1f1f1;
-  margin: 10px;
-  margin-right: 20vh;
-  padding: 10px;
-  font-size: 24px;
+.gallery {
+  display: flex;
+  justify-content: center; /* center the row */
+  align-items: center;
+  flex-wrap: wrap; /* allows wrapping on smaller screens */
+  gap: 15px; /* small gaps between images */
 }
+.gallery2 {
+  display: flex;
+  justify-content: center; /* center the row */
+  align-items: center;
+  padding-top: 15px;
+  flex-wrap: wrap; /* allows wrapping on smaller screens */
+  gap: 15px; /* small gaps between images */
+}
+
+.about-item img {
+  width: 250px;   /* adjust as you like */
+  height: 350px;  /* adjust as you like */
+  object-fit: cover;
+  border-radius: 10px; /* optional: rounded corners */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: transform 0.3s;
+}
+
+.about-item img:hover {
+  transform: scale(1.05);
+}
+
 .education .heading {
 margin-left: 20vh;
 }
+/* Education */
+.education-item{
+  background-color: #ffe8e8;
+  margin: 10px;
+  margin-right: 20vh;
+  margin-left: 20vh;
+  padding: 10px;
+  font-size: 24px;
+  border-radius: 15px; /*Rounded edges for the boxes*/
+}
+
 .education-item:hover {
   transform: translateY(-5px);
   box-shadow: 0 6px 15px rgba(0,0,0,0.3);
 }
 
+.projects .heading {
+ 
+margin-left: 20vh;
 
+}
 #projects {
       
-      margin-top: 10vh;
+      margin-top: 5vh;
 }
 #projects {
   display: flex;
@@ -111,15 +147,17 @@ margin-left: 20vh;
   align-items: center;
   gap: 20px;
   padding: 40px 0px;
+  margin-right: 20vh;
 }
 
 .project-item {
   background-color: #f1f1f1;
   color: black;
-  padding: 0px 20px;
+  padding: 20px;
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  width: 60%;
+  width: 300vh;      /* consistent width */
+  height: 100px;     /* consistent height */
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s;
 }
@@ -149,6 +187,7 @@ section h1 {
 
 footer a{
   color: white;
+  margin-left: 20vh;
   
 }
 footer a:hover{
