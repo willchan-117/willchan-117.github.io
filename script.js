@@ -1,16 +1,20 @@
-// Get all the category buttons
-const categories = document.querySelectorAll(".skill-category");
-// Get all skill groups
-const groups = document.querySelectorAll(".skills-group");
+const categories = document.querySelectorAll('.skill-category');
+const skillGroups = document.querySelectorAll('.skills-group');
 
 categories.forEach(category => {
-  category.addEventListener("mouseenter", () => {
+  category.addEventListener('mouseenter', () => {
     
-    // Hide all groups first
-    groups.forEach(g => g.style.display = "none");
+    // Remove active class from all categories
+    categories.forEach(cat => cat.classList.remove('active'));
+    
+    // Add active class to the hovered category
+    category.classList.add('active');
 
-    // Show the one that matches the hovered category
-    const id = "skills-" + category.dataset.skill;
-    document.getElementById(id).style.display = "flex";
+    // Hide all skill groups
+    skillGroups.forEach(group => group.style.display = 'none');
+
+    // Show the corresponding skill group
+    const skillId = category.dataset.skill;
+    document.getElementById('skills-' + skillId).style.display = 'flex';
   });
 });

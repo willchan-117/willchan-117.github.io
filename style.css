@@ -221,6 +221,11 @@ body {
   background-color: #555;
 }
 
+.skill-category.active {
+  background-color: rgba(255, 179, 94, 0.6); 
+  color: rgb(203, 34, 34); 
+}
+
 .skill-list {
   min-width: 300px;  
 }
