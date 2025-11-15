@@ -24,7 +24,7 @@ const wheel = document.querySelector('.interest-wheel');
 const images = document.querySelectorAll('.wheel-img');
 const centerX = wheel.offsetWidth / 2;
 const centerY = wheel.offsetHeight / 2;
-const radius = 200; // distance from center
+const radius = 260; // distance from center
 const totalImages = images.length;
 
 // Initialize each image at equal angle
