@@ -20,18 +20,44 @@ categories.forEach(category => {
 });
 
 
+const wheel = document.querySelector('.interest-wheel');
+const images = document.querySelectorAll('.wheel-img');
+const centerX = wheel.offsetWidth / 2;
+const centerY = wheel.offsetHeight / 2;
+const radius = 200; // distance from center
+const totalImages = images.length;
 
-document.querySelectorAll(".wheel-img").forEach(img => {
-    img.animate(
-        [
-            { transform: "scale(1)" },
-            { transform: "scale(1.06)" },
-            { transform: "scale(1)" }
-        ],
-        {
-            duration: 3000 + Math.random() * 2000,
-            iterations: Infinity,
-            easing: "ease-in-out"
-        }
-    );
+// Initialize each image at equal angle
+images.forEach((img, i) => {
+  img.dataset.angle = (360 / totalImages) * i; // starting angle
 });
+
+function animateOrbit() {
+  images.forEach(img => {
+    // increase angle
+    let angle = parseFloat(img.dataset.angle);
+    angle += 0.2; // speed
+    if(angle >= 360) angle -= 360;
+
+    // convert to radians
+    const rad = angle * (Math.PI / 180);
+
+    // calculate position on circle
+    const x = centerX + radius * Math.cos(rad) - img.width / 2;
+    const y = centerY + radius * Math.sin(rad) - img.height / 2;
+
+    img.style.left = `${x}px`;
+    img.style.top = `${y}px`;
+
+    // rotate image so bottom faces center
+    img.style.transform = `rotate(${angle + 180}deg)`; 
+
+    // save updated angle
+    img.dataset.angle = angle;
+  });
+
+  requestAnimationFrame(animateOrbit);
+}
+
+// Start animation
+animateOrbit();
