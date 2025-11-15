@@ -268,62 +268,81 @@ body {
 /* ------------------------
     INTERESTS
 -------------------------*/
+/* Full page height */
+.interest-section {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Circle container */
 .interest-wheel {
-  position: relative;
-  width: 450px;
-  height: 450px;
-  margin: 80px auto;
-  animation: rotateWheel 18s linear infinite;
+    position: relative;
+    width: 600px;
+    height: 600px;
 }
 
+/* Center title */
 .center-text {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-size: 28px;
-  font-weight: 600;
-  text-align: center;
-  z-index: 10;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    font-weight: bold;
+    z-index: 10;
 }
 
-/* Image styling */
+/* Orbit circle */
+.orbit {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: orbitSpin 20s linear infinite;
+}
+
+/* Images (bigger + nicer) */
 .wheel-img {
-  position: absolute;
-  width: 110px;
-  height: 110px;
-  object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.25);
-  transition: transform 0.3s ease;
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 25px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+
+    /* cancel the orbit container rotation so they stay radially aligned */
+    animation: counterSpin 20s linear infinite;
 }
 
-/* Hover makes image pop out slightly */
-.wheel-img:hover {
-  transform: scale(1.12);
-  z-index: 20;
+/* Orbit radius distance */
+:root {
+    --orbit-radius: 260px;
 }
 
-/* Position images around circle */
-.i1 { top: 0; left: 50%; transform: translateX(-50%); }
-.i2 { top: 12%; left: 82%; }
-.i3 { top: 50%; left: 100%; transform: translateY(-50%); }
-.i4 { top: 82%; left: 82%; }
-.i5 { bottom: 0; left: 50%; transform: translateX(-50%); }
-.i6 { top: 82%; left: 12%; }
-.i7 { top: 50%; left: 0; transform: translateY(-50%); }
-.i8 { top: 12%; left: 12%; }
+/* Position each image evenly around the circle */
 
-/* Wheel rotation */
-@keyframes rotateWheel {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+/* 8 images = 360/8 = 45° between each */
+.orbit .wheel-img:nth-child(1) { transform: rotate(0deg) translate(var(--orbit-radius)) rotate(0deg); }
+.orbit .wheel-img:nth-child(2) { transform: rotate(45deg) translate(var(--orbit-radius)) rotate(-45deg); }
+.orbit .wheel-img:nth-child(3) { transform: rotate(90deg) translate(var(--orbit-radius)) rotate(-90deg); }
+.orbit .wheel-img:nth-child(4) { transform: rotate(135deg) translate(var(--orbit-radius)) rotate(-135deg); }
+.orbit .wheel-img:nth-child(5) { transform: rotate(180deg) translate(var(--orbit-radius)) rotate(-180deg); }
+.orbit .wheel-img:nth-child(6) { transform: rotate(225deg) translate(var(--orbit-radius)) rotate(-225deg); }
+.orbit .wheel-img:nth-child(7) { transform: rotate(270deg) translate(var(--orbit-radius)) rotate(-270deg); }
+.orbit .wheel-img:nth-child(8) { transform: rotate(315deg) translate(var(--orbit-radius)) rotate(-315deg); }
+
+/* Orbit container rotates */
+@keyframes orbitSpin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
 }
 
-
-
-
-
+/* Images counter-rotate so they face outward */
+@keyframes counterSpin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(-360deg); }
+}
 /* ------------------------
     FOOTER
 -------------------------*/
